@@ -1,0 +1,1 @@
+# Szkieletory-django-projekt
