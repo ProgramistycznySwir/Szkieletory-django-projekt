@@ -1,5 +1,18 @@
-from django.http import HttpResponse
+from .models import File, User, Group
+from rest_framework import viewsets
+from .serializer import FileSerializer, UserSerializer, GroupSerializer
 
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+class FileViewSet(viewsets.ModelViewSet):
+    queryset = File.objects.all()
+    serializer_class = FileSerializer
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class Group(viewsets.ModelViewSet):
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
