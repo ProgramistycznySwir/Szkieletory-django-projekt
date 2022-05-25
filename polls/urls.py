@@ -1,4 +1,4 @@
-import namespace as namespace
+# import namespace as namespace
 from django.urls import path, include
 from rest_framework import routers
 from .views import FileViewSet, UserViewSet, GroupViewSet
