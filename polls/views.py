@@ -1,6 +1,6 @@
-from .models import File, User, Group
+from .models import File, Profile, Group
 from rest_framework import viewsets
-from .serializer import FileSerializer, UserSerializer, GroupSerializer
+from .serializer import FileSerializer, ProfileSerializer, GroupSerializer
 
 
 class FileViewSet(viewsets.ModelViewSet):
@@ -8,9 +8,9 @@ class FileViewSet(viewsets.ModelViewSet):
     serializer_class = FileSerializer
 
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+class ProfileViewSet(viewsets.ModelViewSet):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
 
 
 class GroupViewSet(viewsets.ModelViewSet):
