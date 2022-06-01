@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './components/Home';
 import LoginScreen from './components/login_screen/LoginScreen'
 import MyFiles from './components/MyFiles';
-import BottomBar from './components/bottom_bar/BottomBar';
+
 
 function App() {
   return (
@@ -13,9 +13,6 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home></Home>
-          </Route>
-          <Route>
-            <LoginScreen></LoginScreen>
           </Route>
           <Route>
             <MyFiles></MyFiles>
