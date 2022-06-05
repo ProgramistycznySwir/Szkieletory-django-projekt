@@ -2,8 +2,16 @@ import React, {useState,useEffect} from 'react'
 import Axios from "axios";
 
 const LogIn = ({Login, error}) => {
+
+  const [details, setDetails] = useState({name: "", email: "", password: ""});
+
+  const submitHandler = (e) => {
+    e.preventDeafult()
+    Login(details)
+  }
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="form-inner">
         <h2>Login</h2>
         {/*Error*/}

@@ -2,6 +2,8 @@ import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './components/Home';
 import MyFiles from './components/MyFiles';
+import PrivateRoute from './utils/PrivateRoute'
+import LoginScreen from './components/login_screen/LoginScreen';
 
 
 function App() {
@@ -9,12 +11,15 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-           <Route exact path="/">
+          <Route exact path="/login">
+            <LoginScreen></LoginScreen>
+          </Route>
+           <PrivateRoute exact path="/">
             <Home></Home>
-          </Route>
-          <Route exact path="/my_files">
+          </PrivateRoute>
+          <PrivateRoute exact path="/my_files">
             <MyFiles></MyFiles>
-          </Route>
+          </PrivateRoute>
         </Switch>
       </div>
     </Router>
