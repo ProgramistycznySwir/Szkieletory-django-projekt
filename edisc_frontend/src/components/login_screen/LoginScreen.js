@@ -5,17 +5,6 @@ import Register from './Register'
 
 const LoginScreen = () => {
   const [active, setActive] = useState("Login")
-  const [user, setUser] = useState({username:"", email: ""})
-  const [error, setError] = useState("")
-
-  const Login = (details) => {
-    console.log(details)
-  }
-
-  const Logout = () => {
-    console.log("Logout")
-  }
-
 
   return (
     <div>
@@ -33,7 +22,7 @@ const LoginScreen = () => {
     </div>
     <div>
         <div>
-        {active === "Login" && <LogIn Login={Login} error={error}></LogIn>}
+        {active === "Login" && <LogIn></LogIn>}
         {active === "Register" && <Register></Register>}
         </div>
     </div>
