@@ -3,6 +3,7 @@ import Axios from "axios";
 import LogIn from './login_screen/LogIn';
 import Register from './login_screen/Register'
 import Navbar from './Navbar'
+import AuthContext from '../contexts/AuthContext'
 
 const Home = () => {
   return (

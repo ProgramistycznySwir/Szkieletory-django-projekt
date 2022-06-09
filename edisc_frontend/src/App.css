@@ -7,6 +7,12 @@ body {
     background-color: #d0d0d0;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem
+}
+
 .navbar {
     position: relative;
    /* height: 6.7vh;*/
@@ -50,4 +56,24 @@ body {
     border-top-right-radius: 8px;
 }
 
+.login {
+    padding: 1rem;
+    display: flex;
+    background-color:rgba(97,219,251,0.8);
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 
+input {
+    border:none;
+    border-color: #F4F4F4;
+    color: #C3C3C3;
+    padding: 0.2rem;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.loginBtn {
+    background-color: #fff;
+    color: #61DBFB;
+}
