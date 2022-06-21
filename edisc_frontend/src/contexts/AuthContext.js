@@ -15,7 +15,7 @@ export const AuthProvider = ({children}) => {
     let loginUser = async (e) => {
         e.preventDeafult()
         console.log('form submitted')
-        let response = Axios({
+        /*let response = Axios({
             method: 'post',
             url: 'http://127.0.0.1:8000/api/auth/token/obtain/',
             data: {
@@ -31,7 +31,7 @@ export const AuthProvider = ({children}) => {
         if(response.status === 200){
             setAuthToken(data)
             setUser(jwt_decode(data.access))
-        }
+        }*/
     }
 
     let contextData = {

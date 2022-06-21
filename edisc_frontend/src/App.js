@@ -12,7 +12,7 @@ function App() {
     <Router>
         <div className="App">
           <Switch>
-            <AuthProvider>
+            {/* <AuthProvider>*/}
               <Route exact path="/login">
                 <LoginScreen></LoginScreen>
               </Route>
@@ -22,7 +22,7 @@ function App() {
               <PrivateRoute exact path="/my_files">
                 <MyFiles></MyFiles>
               </PrivateRoute>
-            </AuthProvider>
+            {/*</AuthProvider>*/}
           </Switch>
         </div>
     </Router>
