@@ -18,7 +18,7 @@ const LogIn = () => {
 
   const [username, setUsername] = useState("")
   const [password, setPassowrd] = useState("")
-  const [loginStatus, setLoginStatus] = useState("")
+  const [loginStatus, setLoginStatus] = useState(false)
 
   const login = () => {
     Axios.post("http://127.0.0.1:8000/api/auth/token/obtain/", {
@@ -26,11 +26,11 @@ const LogIn = () => {
       password: password,
     }).then((response) => {
       if(!response.data.message) {
-      setLoginStatus(response.data.message)
+      setLoginStatus(false)
       }
       else {
         console.log(response.data)
-        setLoginStatus(response.data[0].username)
+        setLoginStatus(true)
       }
     })
     }
@@ -44,6 +44,7 @@ const LogIn = () => {
                 <span className='center'><button className='loginBtn' onClick={login}>Login</button></span>
             </div>
         </div>
+        <p>{loginStatus != ""}</p>
       </div>
     )
 }
