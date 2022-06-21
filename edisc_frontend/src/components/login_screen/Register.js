@@ -1,6 +1,22 @@
-import React from 'react'
+import React, {useState,useEffect, useContext} from 'react'
+import Axios from "axios";
 
 const Register = () => {
+
+  const [username, setUsername] = useState("")
+  const [password, setPassowrd] = useState("")
+  const [email, setUEmail] = useState("")
+
+  const login = () => {
+    Axios.post("http://127.0.0.1:8000/api/auth/token/obtain/", {
+      username: username,
+      password: password,
+      email: email,
+    }).then((response) => {
+      console.log(response)
+    })
+    }
+
   return (
     <div className='center'>
       <div className='login'>

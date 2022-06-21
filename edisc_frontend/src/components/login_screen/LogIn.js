@@ -1,6 +1,6 @@
 import React, {useState,useEffect, useContext} from 'react'
 import Axios from "axios";
-import AuthContext from "../../contexts/AuthContext"
+//import AuthContext from "../../contexts/AuthContext"
 
 const LogIn = () => {
 
@@ -35,16 +35,14 @@ const LogIn = () => {
     })
     }
 
-  }
-
     return (
       <div className='center'>
         <div className='login'>
-            <form>
-                <span className='center'><input type="text" name="username"/></span>
-                <span className='center'><input type="password" name="password"/></span>
-                <span className='center'><input type="submit" className='loginBtn'></input></span>
-            </form>
+            <div>
+                <span className='center'><input type="text" name="username" placeholder="username" onChange={(e) => {setUsername(e.target.value)}}/></span>
+                <span className='center'><input type="password" name="password" placeholder="password" onChange={(e) => {setPassowrd(e.target.value)}}/></span>
+                <span className='center'><button className='loginBtn' onClick={login}>Login</button></span>
+            </div>
         </div>
       </div>
     )
