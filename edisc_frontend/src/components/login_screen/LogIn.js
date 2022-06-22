@@ -25,7 +25,7 @@ const LogIn = () => {
       username: username,
       password: password,
     }).then((response) => {
-      if(!response.data.message) {
+      if(!response.data.auth) {
       setLoginStatus(false)
       }
       else {
