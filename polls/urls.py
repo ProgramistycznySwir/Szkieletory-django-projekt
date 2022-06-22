@@ -7,6 +7,7 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register(r'file', views.FileViewSet)
+# router.register(r'fileTransfer', views.TransferFileViewSet)
 router.register(r'dir', views.DirectoryViewSet)
 router.register(r'profile', views.ProfileViewSet)
 router.register(r'group', views.GroupViewSet)

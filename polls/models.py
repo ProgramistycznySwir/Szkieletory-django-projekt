@@ -42,6 +42,10 @@ class File(models.Model):
   size = models.BigIntegerField()
   def __str__(self):
     return self.name
+  def getRootDir(self):
+    if(self.parent_directory is None):
+      return self
+    return getRootDir(self.parent_directory)
 
 class Directory(models.Model):
   id = models.UUIDField(
@@ -51,6 +55,7 @@ class Directory(models.Model):
   parent_directory = models.ForeignKey(to= 'Directory', on_delete= models.CASCADE, blank=True, default=None, null=True)
   name = models.TextField(max_length= 64)
   contents_size = models.BigIntegerField()
+  is_public = models.BooleanField(default= False)
 
   # @property
   # def profile(self):
@@ -69,6 +74,10 @@ class Directory(models.Model):
     if(self.parent_directory is None):
       return f'{self.profile}:root'
     return self.name
+  def getRootDir(self):
+    if(self.parent_directory is None):
+      return self
+    return getRootDir(self.parent_directory)
 
 class Profile(models.Model):
   id = models.UUIDField(
@@ -80,6 +89,10 @@ class Profile(models.Model):
   # email = models.EmailField()
   def __str__(self):
     return self.user.username
+  # def delete(self):
+  #   self.user.delete()
+  #   self.root_directory.delete()
+  #   self.delete()
 
 class Group(models.Model):
   id = models.UUIDField(

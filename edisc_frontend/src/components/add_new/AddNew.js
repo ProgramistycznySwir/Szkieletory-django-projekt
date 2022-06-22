@@ -3,9 +3,11 @@ import React, { useState, useEffect } from 'react'
 import NewFile from './NewFile'
 import NewFolder from './NewFolder'
 
-const AddNew = () => {
+const AddNew = (props) => {
 
   const [active, setActive] = useState("")
+
+  const folder_id = props.folderId
 
   return (
     <div>
@@ -23,8 +25,8 @@ const AddNew = () => {
         </div>
       <div>
         <div>
-          {active === "File" && <NewFile/>}
-          {active === "Folder" && <NewFolder/>}
+          {active === "File" && <NewFile folderId={folder_id}/>}
+          {active === "Folder" && <NewFolder folderId={folder_id}/>}
         </div>
       </div>
     </div>

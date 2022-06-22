@@ -8,9 +8,9 @@ const ElementDir = (props) => {
 
   return (
     <div className='element'>
-      <Link to={`/Directory/${id}`}>
-        <h1>{name}</h1>
-        <h1>{content_size}</h1>
+      <Link to={`/directory/${id}`}>
+        <p className='listFirstLine'>{name}</p>
+        <p className='listSmallerText'>{content_size} files and folders</p>
       </Link>
     </div>
   )
