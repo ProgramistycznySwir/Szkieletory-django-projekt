@@ -37,3 +37,39 @@
   coverage run --omit='*/venv/*' manage.py test
   coverage html
 ```
+
+# Dla mikele:
+
+- [ ] Zrobić całe ui front-end'u:
+  - [ ] Strona folderu:
+    - [ ] Dodawanie folderów
+    - [ ] Uploadowanie plików
+    - [ ] Refka na stronę użyszkodnika
+    + [ ] Jeśli jest to folder to można go upublicznić (albo schować)
+      - [ ] Prompt
+    - [ ] Wyświetlanie tabelki zawartości:
+      - [ ] Wypisanie info
+      - [ ] Edytowanie nazwy
+      - [ ] Usuwanie elementów
+        - [ ] Prompt
+      + [ ] Jeśli jest to folder to można go upublicznić (albo schować)
+        - [ ] Prompt
+  > - [ ] Strona użyszkodnika:
+  >   - [ ] Info
+  >   - [ ] Edycja username
+  >   - [ ] Refka na stronę root-folder'u
+  >   * [ ] Usuwanie konta
+  >   > - [ ] Lista (najlepiej drop-down) zaproszeń do grupy:
+  >   >   - [ ] Możliwość akceptowania albo odrzucania zaproszeń
+    > - [ ] Lista grup:
+    >   - [ ] Tworzenie nowej grupy
+    >   - [ ] Lista grup do których należysz
+  > - [ ] Strona grupy:
+  >   - [ ] Wyświetlanie nazwy grupy
+  >   - [ ] Refka na root-folder grupy
+  >   - [ ] Lista członków
+  >   - [ ] Dodawanie nowych członków po uuid
+  >   - [ ] Lista (najlepiej drop-down) zaproszeń do grupy:
+  >     - [ ] Możliwość akceptowania albo odrzucania zaproszeń
+  >   - [ ] Opuszczanie grupy
+  >   * [ ] Jeśli wszyscy użyszkodnicy opuszczą grupę to usunąć ją

@@ -1,8 +1,14 @@
 from rest_framework import viewsets
 from .models import File, Profile, Group
 from .serializer import *
+from rest_framework.permissions import AllowAny
 
+class PublicFileViewSet(viewsets.ModelViewSet):
+    permission_classes = [AllowAny]
+    queryset = File.objects.all()
+    serializer_class = FileSerializer
 class FileViewSet(viewsets.ModelViewSet):
+    # permission_classes = [AllowAny]
     queryset = File.objects.all()
     serializer_class = FileSerializer
 

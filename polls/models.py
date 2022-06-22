@@ -44,21 +44,21 @@ class Directory(models.Model):
   name = models.TextField(max_length=64)
   contents_size = models.BigIntegerField()
 
-  @property
-  def profile(self):
-    try:
-      return self.profile
-    except DoesNotExist:
-      return None
-  @profile.setter
-  def profile(self, profile):
-    self.profile = profile
+  # @property
+  # def profile(self):
+  #   try:
+  #     return self.profile
+  #   except DoesNotExist:
+  #     return None
+  # @profile.setter
+  # def profile(self, profile):
+  #   self.profile = profile
 
   class Meta:
     verbose_name = "Directory"
     verbose_name_plural = "Directories"
   def __str__(self):
-    if(self.name == 'root'):
+    if(self.parent_directory is None):
       return f'{self.profile}:root'
     return self.name
 
