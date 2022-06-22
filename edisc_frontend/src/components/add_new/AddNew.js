@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import NewFile from './NewFile'
 import NewFolder from './NewFolder'
 
-const Add_new = () => {
+const AddNew = () => {
 
   const [active, setActive] = useState("")
 
@@ -31,4 +31,4 @@ const Add_new = () => {
   )
 }
 
-export default Add_new
+export default AddNew

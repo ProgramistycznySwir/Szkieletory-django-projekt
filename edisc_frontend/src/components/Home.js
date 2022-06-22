@@ -4,11 +4,11 @@ import LogIn from './login_screen/LogIn';
 import Register from './login_screen/Register'
 import Navbar from './Navbar'
 import AuthContext from '../contexts/AuthContext'
-import Directory from './Directory'
+import Directory from './directory/Directory'
 
 const Home = () => {
 
-  const [user, setProfile] = useState("")
+  const [profile, setProfile] = useState("")
   const [file, setFile] = useState("")
 
  /* useEffect(() => {
@@ -17,18 +17,18 @@ const Home = () => {
   }, []);*/
 
   useEffect(() => {
-    Axios.get(`http://localhost:8000/polls/api/profile/$`)
+    Axios.get(`http://localhost:8000/polls/api/profile/${2}`)
       .then(res => setProfile(res.data));
   }, []);
 
   const test = () => {
-    console.log(...file)
+    console.log(...profile)
   }
   
   return (
     <div>
       <Navbar></Navbar>
-      <Directory></Directory>
+      <Directory folderId={profile.root_directory_id} ></Directory>
       <button onClick={test}>test</button>
     </div>
 

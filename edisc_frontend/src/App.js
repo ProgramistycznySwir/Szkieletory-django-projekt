@@ -1,12 +1,12 @@
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './components/Home';
-import Directory from './components/Directory';
+import Directory from './components/directory/Directory';
 import PrivateRoute from './utils/PrivateRoute'
 import LoginScreen from './components/login_screen/LoginScreen';
 import User from './components/User';
+import File from './components/directory/File';
 import { AuthProvider } from './contexts/AuthContext'
-import Add_new from './components/add_new/Add_new'
 
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
                 <User></User>
               </PrivateRoute>
               <PrivateRoute exact path="/file/:id">
-                <User></User>
+                <File></File>
               </PrivateRoute>
             {/*</AuthProvider>*/}
           </Switch>
