@@ -8,7 +8,7 @@ const User = () => {
 
     useEffect(() => {
         Axios.get(`http://127.0.0.1:8000/polls/api/profile/${id}`)
-            .then(res => setUsername(res.data));
+            .then(res => setUser(res.data));
     }, []);
     
     return (
