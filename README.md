@@ -11,3 +11,23 @@
 ## Za tydzień:
 - Implementacja modeli,
 - Panel admina do dodawania katalogów.
+
+
+# E-Disk
+- Magazyn plików
+  - Użytkownicy
+  - Ograniczony rozmiar e-dysku
+  - Struktury:
+    - Katalog
+    - Plik
+  - Operacje:
+    - Wspólne:
+      - Pobierz
+      - Udostępnij
+      - Zmiana nazwy
+      - Wytnij
+      - Wklej
+      - Usuń
+    - Katalog:
+      - Nowy katalog
+      - Załaduj

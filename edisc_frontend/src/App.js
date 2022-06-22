@@ -1,9 +1,10 @@
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './components/Home';
-import MyFiles from './components/MyFiles';
+import Directory from './components/Directory';
 import PrivateRoute from './utils/PrivateRoute'
 import LoginScreen from './components/login_screen/LoginScreen';
+import User from './components/User';
 import { AuthProvider } from './contexts/AuthContext'
 
 
@@ -19,8 +20,14 @@ function App() {
               <PrivateRoute exact path="/">
                 <Home></Home>
               </PrivateRoute>
-              <PrivateRoute exact path="/my_files">
-                <MyFiles></MyFiles>
+              <PrivateRoute exact path="/directory/:id">
+                <Directory></Directory>
+              </PrivateRoute>
+              <PrivateRoute exact path="/user/:id">
+                <User></User>
+              </PrivateRoute>
+              <PrivateRoute exact path="/file/:id">
+                <User></User>
               </PrivateRoute>
             {/*</AuthProvider>*/}
           </Switch>
