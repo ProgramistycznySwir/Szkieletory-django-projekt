@@ -80,3 +80,46 @@ input {
     padding: 0.2rem;
     border-radius: 5px;
 }
+
+.chooseBtn {
+    padding: 0.5rem;
+    color: #61DBFB;
+    border: none;
+    border: solid #fff;
+    background-color: #fff;
+}
+
+.chooseBtn:hover {
+    border: solid #61DBFB;
+    border-radius: 8px;
+}
+
+.chooseBtn_clicked {
+    padding: 0.5rem;
+    border:none;
+    border-bottom: solid #61DBFB;
+    color: #fff;
+    background-color: #61DBFB;
+    border-radius: 8px;
+}
+
+.btn_bar {
+    margin-top: 1rem;
+    position: relative;
+    height: 3.1rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.btn_bar_links {
+    margin: auto;
+    list-style: none;
+    gap: 1rem;
+    display: flex;
+}
+
+.btn_bar_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}

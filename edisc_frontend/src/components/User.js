@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
+import Navbar from './Navbar'
 
 const User = () => {
     const { id } = useParams();
@@ -12,7 +13,10 @@ const User = () => {
     }, []);
     
     return (
-        <div>User</div>
+        <div>
+            <Navbar></Navbar>
+            <div>User</div>
+        </div>
     )
 }
 

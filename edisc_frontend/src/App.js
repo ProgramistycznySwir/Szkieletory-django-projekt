@@ -6,6 +6,7 @@ import PrivateRoute from './utils/PrivateRoute'
 import LoginScreen from './components/login_screen/LoginScreen';
 import User from './components/User';
 import { AuthProvider } from './contexts/AuthContext'
+import Add_new from './components/add_new/Add_new'
 
 
 function App() {
@@ -20,10 +21,10 @@ function App() {
               <PrivateRoute exact path="/">
                 <Home></Home>
               </PrivateRoute>
-              <PrivateRoute exact path="/directory/:id">
+              {/*<PrivateRoute exact path="/directory/:id">
                 <Directory></Directory>
-              </PrivateRoute>
-              <PrivateRoute exact path="/user/:id">
+              </PrivateRoute>*/}
+              <PrivateRoute exact path="/user">
                 <User></User>
               </PrivateRoute>
               <PrivateRoute exact path="/file/:id">

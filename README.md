@@ -31,3 +31,9 @@
     - Katalog:
       - Nowy katalog
       - Załaduj
+
+# Scripts:
+```s
+  coverage run --omit='*/venv/*' manage.py test
+  coverage html
+```

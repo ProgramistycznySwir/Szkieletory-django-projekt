@@ -1,14 +1,15 @@
 # import namespace as namespace
 from django.urls import path, include
 from rest_framework import routers
-from .views import FileViewSet, ProfileViewSet, GroupViewSet
+# from .views import *
 
 from . import views
 
 router = routers.DefaultRouter()
-router.register(r'file', FileViewSet)  # Jesli zapytanie zawiera taki string to przekieruj do FileViewSet
-router.register(r'profile', ProfileViewSet)
-router.register(r'group', GroupViewSet)
+router.register(r'file', views.FileViewSet)
+router.register(r'dir', views.DirectoryViewSet)
+router.register(r'profile', views.ProfileViewSet)
+router.register(r'group', views.GroupViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),
