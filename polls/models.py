@@ -1,6 +1,7 @@
 import uuid
 from django.db import models
 from django.contrib.auth.models import User
+from django.dispatch import receiver
 
 # Create your models here.
 '''
@@ -22,6 +23,13 @@ Group(
   RootDirectoryID: GUID,
   Name: string)
 '''
+@receiver(models.signals.post_save, sender=User)
+def execute_after_save(sender, instance, created, *args, **kwargs):
+  if created:
+    dir = Directory(name= 'root', contents_size= 0)
+    dir.save()
+    prof = Profile(user= instance, root_directory= dir)
+    prof.save()
 
 class File(models.Model):
   id = models.UUIDField(
@@ -41,7 +49,7 @@ class Directory(models.Model):
     default = uuid.uuid4,
     editable = False)
   parent_directory = models.ForeignKey(to= 'Directory', on_delete= models.CASCADE, blank=True, default=None, null=True)
-  name = models.TextField(max_length=64)
+  name = models.TextField(max_length= 64)
   contents_size = models.BigIntegerField()
 
   # @property

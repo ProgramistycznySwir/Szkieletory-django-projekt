@@ -1,12 +1,22 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 from .models import File, Profile, Group
 from .serializer import *
 from rest_framework.permissions import AllowAny
 
-class PublicFileViewSet(viewsets.ModelViewSet):
+class PublicFileViewSet(viewsets.ViewSet):
     permission_classes = [AllowAny]
     queryset = File.objects.all()
     serializer_class = FileSerializer
+class TransferFileViewSet(viewsets.ViewSet):
+    # permission_classes = [AllowAny]
+    queryset = File.objects.all()
+    serializer_class = FileSerializer
+    def create(self, request):
+        pass
+    def retrieve(self, request, pk=None): # Download
+        pass
+
+# class FileViewSet(generics.RetrieveUpdateDestroyAPIView):
 class FileViewSet(viewsets.ModelViewSet):
     # permission_classes = [AllowAny]
     queryset = File.objects.all()

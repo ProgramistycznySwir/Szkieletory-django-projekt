@@ -4,7 +4,7 @@ import LogIn from './login_screen/LogIn';
 import Register from './login_screen/Register'
 import Navbar from './Navbar'
 import AuthContext from '../contexts/AuthContext'
-import Directory from './directory/Directory'
+import RootDirectory from './directory/RootDirectory'
 
 const Home = () => {
 
@@ -28,7 +28,7 @@ const Home = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <Directory folderId={profile.root_directory_id} ></Directory>
+      <RootDirectory folderId={profile.root_directory_id} ></RootDirectory> {/*może do poprawy*/}
       <button onClick={test}>test</button>
     </div>
 
