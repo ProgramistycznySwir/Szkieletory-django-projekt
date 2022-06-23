@@ -2,6 +2,7 @@ from rest_framework import viewsets, generics, status
 from django.shortcuts import get_object_or_404
 from rest_framework.permissions import AllowAny, BasePermission, SAFE_METHODS
 from rest_framework.response import Response
+from rest_framework.views import APIView
 from .models import File, Profile, Group
 from .serializer import *
 
@@ -50,10 +51,11 @@ class DirectoryViewSet(viewsets.GenericViewSet, OwnerPermission):
 
     def create(self, request):
         serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True) # TODO: Potential exception here!
+        if not serializer.is_valid():
+            return Response(serializer.errors, status.HTTP_400_BAD_REQUEST)
         if(serializer.validated_data.get('parent_directory') not in self.queryset):
-            return Response("You have to specify parent directory for this element!!!", status.HTTP_403_FORBIDDEN)
-        serializer.save()
+            return Response("You have to specify parent directory for this element!!!", status.HTTP_400_BAD_REQUEST)
+        newDir = serializer.save()
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     
@@ -75,3 +77,13 @@ class ProfileViewSet(viewsets.ModelViewSet):
 class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+class RegisterUserView(APIView):
+    permission_classes = [AllowAny]
+    
+    def post(self, request):
+        serializer = RegisterUserSerializer(data= request.data)
+        if not serializer.is_valid():
+            return Response(serializer.errors, status.HTTP_400_BAD_REQUEST)
+        serializer.save()
+        return Response(serializer.validated_data, status.HTTP_201_CREATED)

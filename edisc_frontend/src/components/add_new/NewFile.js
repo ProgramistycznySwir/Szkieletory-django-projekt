@@ -7,18 +7,25 @@ const NewFile = (props) => {
 
   const folder_id = props.folderId
 
- /* const addFile = () => {
-    Axios.post("http://localhost:8000/polls/api/file/, {
+  const addFile = () => {
 
-    }
-  }*/
+    const formData = new FormData()
+
+    formData.append(
+      "myFile",
+      file,
+      file.name
+    )
+
+    Axios.post("http://localhost:8000/polls/api/file/", formData)
+  }
 
   return (
     <div className='center'>
       {/* */}
       <div className='login'>
         <div>
-          <span className='center'><input type="file" name="upload_file" onChange={(e) => { setFile(e.target.value) }} /></span>
+          <span className='center'><input type="file" name="upload_file" onChange={(e) => { setFile(e.target.files[0]) }} /></span>
           <span className='center'><button className='loginBtn'>Upload</button></span>
         </div>
       </div>

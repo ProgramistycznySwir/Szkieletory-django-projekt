@@ -52,7 +52,7 @@
 - [ ] Zrobić całe ui front-end'u:
   - [ ] Strona folderu:
     - [x] Dodawanie folderów
-    - [ ] Uploadowanie plików
+    - [x] Uploadowanie plików
     - [x] Refka na stronę użyszkodnika
     + [ ] Jeśli jest to folder to można go upublicznić (albo schować)
       - [ ] Prompt
