@@ -30,6 +30,9 @@ function App() {
               <PrivateRoute exact path="/file/:id">
                 <File></File>
               </PrivateRoute>
+              <PrivateRoute path="*">
+                <Home></Home>
+              </PrivateRoute>
             {/*</AuthProvider>*/}
           </Switch>
         </div>

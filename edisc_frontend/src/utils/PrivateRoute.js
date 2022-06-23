@@ -3,7 +3,7 @@ import React from 'react'
 
 const PrivateRoute = ({children, ...rest}) => {
   
-  const authenticated = true
+  const authenticated = false
 
   return (
     <Route{...rest}>{!authenticated ? <Redirect to="/login"></Redirect> : children}</Route>

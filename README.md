@@ -64,9 +64,9 @@
       + [ ] Jeśli jest to folder to można go upublicznić (albo schować)
         - [ ] Prompt
   > - [ ] Strona użyszkodnika:
-  >   - [ ] Info
+  >   - [x] Info
   >   - [ ] Edycja username
-  >   - [ ] Refka na stronę root-folder'u
+  >   - [x] Refka na stronę root-folder'u
   >   * [ ] Usuwanie konta
   >   > - [ ] Lista (najlepiej drop-down) zaproszeń do grupy:
   >   >   - [ ] Możliwość akceptowania albo odrzucania zaproszeń

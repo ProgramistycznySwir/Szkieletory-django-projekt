@@ -21,10 +21,10 @@ const LogIn = () => {
   const [loginStatus, setLoginStatus] = useState(false)
 
   const login = () => {
-    Axios.post("http://127.0.0.1:8000/api/auth/login", [{ 
+    Axios.post("http://127.0.0.1:8000/api/auth/login", { 
       username: username,
       password: password,
-    }]).then((response) => {
+    }).then((response) => {
       if(!response.data.message) {
       setLoginStatus(false)
         console.log(response.data.message)

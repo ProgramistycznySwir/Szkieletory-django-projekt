@@ -8,9 +8,9 @@ const EditFolder = (props) => {
     const folder_id = props.folderId
 
     const editFolder = () => {
-        Axios.post(`http://localhost:8000/polls/api/dir/${folder_id}`, [{
+        Axios.put(`http://localhost:8000/polls/api/dir/${folder_id}`, {
             name: name,
-        }]).then(response => {
+        }).then(response => {
             console.log(response)
         })
             .catch(error => {

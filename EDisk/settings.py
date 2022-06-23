@@ -41,13 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    # "corsheaders",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    # "corsheaders.middleware.CorsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -136,9 +136,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        # 'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.AllowAny',
         # 'rest_framework.permissions.IsAuthenticatedOrReadOnly',
-        'rest_framework.permissions.IsAuthenticated',
+        # 'rest_framework.permissions.IsAuthenticated',
         # 'rest_framework.permissions.IsAdminUser', # TODO: Make this authentication default
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -147,10 +147,10 @@ REST_FRAMEWORK = {
     )
 }
 
-# CORS_ALLOWED_ORIGINS = [
-#     "https://localhost:3080",
-#     "https://127.0.0.1:3000",
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "https://localhost:3080",
+    "https://127.0.0.1:3000",
+]
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=14*24*60),

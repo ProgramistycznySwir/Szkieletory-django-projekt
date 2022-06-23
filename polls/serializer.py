@@ -21,7 +21,7 @@ class FileSerializer(serializers.HyperlinkedModelSerializer):
 
 class DirectorySerializer(serializers.HyperlinkedModelSerializer):
     # parent_directory = SubDirSerializer(required=False)
-    files = SubFileSerializer(many=True, read_only=True)
+    files = SubFileSerializer(many=True, read_only=True) # Here add query
     # files = serializers.PrimaryKeyRelatedField(queryset=File.objects.all(), many=True)
     # files = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
     class Meta:
