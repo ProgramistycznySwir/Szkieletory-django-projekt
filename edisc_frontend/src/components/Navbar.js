@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom';
 
-const navbar = () => {
+const Navbar = () => {
+
+ // const [path, setPath] = useState("/user")
+  
+  const path = window.location.pathname
+
   return (
     <div className="navbar">
         <nav className="navbar_links">
           <ul>
             <li>
-              <Link className='link' to='/'>Home</Link>
+              <Link className={path === "/" ? 'link_clicked' : 'link'} to='/'>Home</Link>
             </li>
             <li>
-            <Link className='link' to='/user'>User page</Link>
+              <Link className={path === "/user" ? 'link_clicked' : 'link'} to='/user'>User page</Link>
             </li>
           </ul>
         </nav>
@@ -18,4 +23,4 @@ const navbar = () => {
   )
 }
 
-export default navbar
+export default Navbar

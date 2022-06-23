@@ -40,10 +40,12 @@ body {
     color: #61DBFB;
     border: none;
     background-color: #fff;
+    text-decoration: none;
 }
 
 .link:hover {
     border-bottom: solid #61DBFB;
+    color:#61DBFB;
 }
 
 .link_clicked {
@@ -54,6 +56,11 @@ body {
     background-color: #61DBFB;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    text-decoration: none;
+}
+
+.link_clicked:hover {
+    color:#fff
 }
 
 .login {
@@ -166,3 +173,4 @@ input {
     font-size: 0.7rem;
     color: #C3C3C3;
 }
+

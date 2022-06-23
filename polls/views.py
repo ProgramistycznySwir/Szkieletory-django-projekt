@@ -1,7 +1,9 @@
-from rest_framework import viewsets, generics
+from rest_framework import viewsets, generics, status
+from django.shortcuts import get_object_or_404
+from rest_framework.permissions import AllowAny, BasePermission, SAFE_METHODS
+from rest_framework.response import Response
 from .models import File, Profile, Group
 from .serializer import *
-from rest_framework.permissions import AllowAny, BasePermission, SAFE_METHODS
 
 # class PublicFileViewSet(viewsets.ViewSet):
 #     permission_classes = [AllowAny]
@@ -22,6 +24,7 @@ class OwnerPermission(BasePermission):
 
     def has_object_permission(self, request, view, obj):
         return obj.getRootDir().profile.user == request.user
+
 # class TransferFileViewSet(viewsets.ViewSet, OwnerTransferPermission):
 # class TransferFileViewSet(generics.RetrieveAPIView, OwnerTransferPermission):
 #     permission_classes = [OwnerTransferPermission]
@@ -34,14 +37,30 @@ class OwnerPermission(BasePermission):
 
 # class FileViewSet(generics.RetrieveUpdateDestroyAPIView):
 class FileViewSet(viewsets.ModelViewSet, OwnerPermission):
-    # permission_classes = [OwnerPermission]
+    permission_classes = [OwnerPermission]
     queryset = File.objects.all()
     serializer_class = FileSerializer
 
-class DirectoryViewSet(viewsets.ModelViewSet, OwnerPermission):
-    # permission_classes = [OwnerPermission]
+# class DirectoryAPIView(generics.RetrieveAPIView):
+# class DirectoryAPIView(generics.RetrieveUpdateDestroyAPIView):
+class DirectoryViewSet(viewsets.GenericViewSet, OwnerPermission):
+    permission_classes = [OwnerPermission]
     queryset = Directory.objects.all()
     serializer_class = DirectorySerializer
+
+    def create(self, request):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True) # TODO: Potential exception here!
+        if(serializer.validated_data.get('parent_directory') not in self.queryset):
+            return Response("You have to specify parent directory for this element!!!", status.HTTP_403_FORBIDDEN)
+        serializer.save()
+
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+    def retrieve(self, request, pk=None):
+        item = get_object_or_404(self.queryset, pk=pk)
+        serializer = self.get_serializer(item)
+        return Response(serializer.data)
 
 # class FileDetailsViewSet(viewsets.ModelViewSet):
 #     queryset = File.objects.all()

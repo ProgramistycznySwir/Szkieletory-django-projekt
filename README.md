@@ -41,6 +41,11 @@
   coverage run --omit='*/venv/*' manage.py test
   coverage html
 ```
+# Useful:
+```
+  Luigi's root-dir: 1bc80bf8-65a0-427d-ba5a-7dc81c45d86c
+  Non-existant's root-dir: 24fe8d1f-66f4-4d1e-a961-16c05d2fbe79
+```
 
 # Dla mikele:
 
@@ -53,8 +58,8 @@
       - [ ] Prompt
     - [x] Wyświetlanie tabelki zawartości:
       - [x] Wypisanie info
-      - [ ] Edytowanie nazwy
-      - [ ] Usuwanie elementów
+      - [x] Edytowanie nazwy
+      - [x] Usuwanie elementów
         - [ ] Prompt
       + [ ] Jeśli jest to folder to można go upublicznić (albo schować)
         - [ ] Prompt

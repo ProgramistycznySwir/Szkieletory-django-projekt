@@ -78,7 +78,7 @@ class Directory(models.Model):
   def getRootDir(self):
     if(self.parent_directory is None):
       return self
-    return getRootDir(self.parent_directory)
+    return self.parent_directory.getRootDir()
 
 class Profile(models.Model):
   id = models.UUIDField(

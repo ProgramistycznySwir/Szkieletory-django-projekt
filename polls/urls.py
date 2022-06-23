@@ -14,5 +14,6 @@ router.register(r'group', views.GroupViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    # path('dir/', views.DirectoryViewSet.as_view({"get":"retrieve"}), "dir"),
 ]

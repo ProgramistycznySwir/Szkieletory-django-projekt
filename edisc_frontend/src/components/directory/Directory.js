@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 import Axios from "axios";
+import ElementDir from './ElementDir'
+import ElementFile from './ElementFile'
+import AddNew from '../add_new/AddNew'
 
 const Directory = () => {
 

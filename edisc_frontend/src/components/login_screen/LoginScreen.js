@@ -10,14 +10,14 @@ const LoginScreen = () => {
     <div>
     <div className="navbar">
         <nav className="navbar_links">
-        <ul>
-            <li>
-            <button className={active === "Login" ? 'link_clicked':'link'} onClick = {() => setActive("Login")}>Login</button>
-            </li>
-            <li>
-            <button className={active === "Register" ? 'link_clicked':'link'} onClick = {() => setActive("Register")}>Register</button>
-            </li>
-        </ul>
+          <ul>
+              <li>
+                <button className={active === "Login" ? 'link_clicked':'link'} onClick = {() => setActive("Login")}>Login</button>
+              </li>
+              <li>
+                <button className={active === "Register" ? 'link_clicked':'link'} onClick = {() => setActive("Register")}>Register</button>
+              </li>
+          </ul>
         </nav>
     </div>
     <div>
