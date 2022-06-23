@@ -54,7 +54,7 @@ class Directory(models.Model):
     editable = False)
   parent_directory = models.ForeignKey(to= 'Directory', on_delete= models.CASCADE, blank=True, default=None, null=True)
   name = models.TextField(max_length= 64)
-  contents_size = models.BigIntegerField()
+  contents_size = models.BigIntegerField(default= 0)
   is_public = models.BooleanField(default= False)
 
   # @property
@@ -72,7 +72,8 @@ class Directory(models.Model):
     verbose_name_plural = "Directories"
   def __str__(self):
     if(self.parent_directory is None):
-      return f'{self.profile}:root'
+      # return f'{self.profile}:root' # TODO: Later debug this code and make this neat.
+      return f'{self.id}:root'
     return self.name
   def getRootDir(self):
     if(self.parent_directory is None):

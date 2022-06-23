@@ -34,6 +34,10 @@
 
 # Scripts:
 ```s
+  # To activate virtual environment
+  source venv/bin/activate
+
+  # To run tests
   coverage run --omit='*/venv/*' manage.py test
   coverage html
 ```
@@ -42,13 +46,13 @@
 
 - [ ] Zrobić całe ui front-end'u:
   - [ ] Strona folderu:
-    - [ ] Dodawanie folderów
+    - [x] Dodawanie folderów
     - [ ] Uploadowanie plików
-    - [ ] Refka na stronę użyszkodnika
+    - [x] Refka na stronę użyszkodnika
     + [ ] Jeśli jest to folder to można go upublicznić (albo schować)
       - [ ] Prompt
-    - [ ] Wyświetlanie tabelki zawartości:
-      - [ ] Wypisanie info
+    - [x] Wyświetlanie tabelki zawartości:
+      - [x] Wypisanie info
       - [ ] Edytowanie nazwy
       - [ ] Usuwanie elementów
         - [ ] Prompt

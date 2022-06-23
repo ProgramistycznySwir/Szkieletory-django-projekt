@@ -34,12 +34,12 @@ class OwnerPermission(BasePermission):
 
 # class FileViewSet(generics.RetrieveUpdateDestroyAPIView):
 class FileViewSet(viewsets.ModelViewSet, OwnerPermission):
-    permission_classes = [OwnerPermission]
+    # permission_classes = [OwnerPermission]
     queryset = File.objects.all()
     serializer_class = FileSerializer
 
 class DirectoryViewSet(viewsets.ModelViewSet, OwnerPermission):
-    permission_classes = [OwnerPermission]
+    # permission_classes = [OwnerPermission]
     queryset = Directory.objects.all()
     serializer_class = DirectorySerializer
 
